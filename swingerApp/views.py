@@ -2,18 +2,16 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from Swinger import Swinger
+from djangoApiDec.djangoApiDec import queryString_required
 import json
 
+@queryString_required(['sentence'])
 def swing(request):
-	if request.POST:
-		s = Swinger()
-		# 讀取預設模型
-		s.load('LogisticRegression')
-		
-		post = request.POST
-		post = post.dict()
-		return JsonResponse({'result':s.swing(post['sentence'])}, safe=False)
-	return JsonResponse({'result':'please post a sentence.'}, safe=False)
+	s = Swinger()
+	# 讀取預設模型
+	s.load('LogisticRegression')
+	sentence = request.GET['sentence']
+	return JsonResponse({'result':s.swing(sentence)}, safe=False)
 
 def bulk_swing(request):
 	if request.POST:
