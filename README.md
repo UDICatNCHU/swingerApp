@@ -1,10 +1,6 @@
 # swingerApp
 
-一個將Swinger套用到django上的套件
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+一個將[Swinger 中文情緒分類器](https://github.com/UDICatNCHU/swinger)套用到django上的套件
 
 ### Prerequisities
 
@@ -51,13 +47,25 @@ These instructions will get you a copy of the project up and running on your loc
 
 3. `python manage.py runserver`：即可進入頁面 `127.0.0.1:8000/swinger` 測試 swinger 是否安裝成功。
 
-### Break down into end to end tests
+## API
 
-not yet.
+4. *`/swinger/bulkswing`*  
+ 需要對此API做POST：下方有範例code。
+  * [api](https://github.com/UDICatNCHU/swinger/#api)
 
-### And coding style tests
+  ```
+  >>> import json, requests
+  >>> requests.post('http://udiclab.cs.nchu.edu.tw/swinger/bulkswing', data={'sentence':json.dumps(
+    [
+      '齊家治國平天下，小家給治了！國家更需要妳，加油!',
+      '擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命未成功期盼繼續努力'
+      ...
+    ]
+  )}).json()
 
-目前沒有coding style tests...
+  # 結果為:{'result': ['pos', 'pos'...]}
+  ```
+
 
 ## Deployment
 
@@ -70,10 +78,6 @@ swingerApp 是一般的django插件，所以必須依存於django專案
 * python3.5
 * pymongo
 
-## Versioning
-
-For the versions available, see the [tags on this repository](https://github.com/david30907d/KCM/releases).
-
 ## Contributors
 
 * **張泰瑋** [david](https://github.com/david30907d)
@@ -81,5 +85,3 @@ For the versions available, see the [tags on this repository](https://github.com
 ## License
 
 This package use `GPL3.0` License.
-
-## Acknowledgments
