@@ -51,20 +51,20 @@
 
 4. *`/swinger/bulkswing`*  
  需要對此API做POST：下方有範例code。
-  * [api](https://github.com/UDICatNCHU/swinger/#api)
+    * [api](https://github.com/UDICatNCHU/swinger/#api)
 
-  ```
-  >>> import json, requests
-  >>> requests.post('http://udiclab.cs.nchu.edu.tw/swinger/bulkswing', data={'sentence':json.dumps(
-    [
-      '齊家治國平天下，小家給治了！國家更需要妳，加油!',
-      '擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命未成功期盼繼續努力'
-      ...
-    ]
-  )}).json()
+    ```
+    >>> import json, requests
+    >>> requests.post('http://udiclab.cs.nchu.edu.tw/swinger/bulkswing', data={'sentence':json.dumps(
+      [
+        '齊家治國平天下，小家給治了！國家更需要妳，加油!',
+        '擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命未成功期盼繼續努力'
+        ...
+      ]
+    )}).json()
 
-  # 結果為:{'result': ['pos', 'pos'...]}
-  ```
+    # 結果為:{'result': ['pos', 'pos'...]}
+    ```
 
 
 ## Deployment
