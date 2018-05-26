@@ -22,34 +22,34 @@
 
 1. `settings.py`裏面需要新增`swingerApp`這個app：
 
-  - add this:
+    - add this:
 
-    ```python
-    INSTALLED_APPS=[
-    ...
-    ...
-    ...
-    'swingerApp',
-    ]
-    ```
+      ```python
+      INSTALLED_APPS=[
+      ...
+      ...
+      ...
+      'swingerApp',
+      ]
+      ```
 
 2. `urls.py`需要新增下列代碼 把所有 `swinger` 開頭的request都導向到`swingerApp`這個app：
 
-  - add this:
+    - add this:
 
-    ```python
-    # swingerApp
-    import swingerApp.urls
-    urlpatterns += [
-        url(r'^swinger/', include(swingerApp.urls))
-    ]
-    ```
+      ```python
+      # swingerApp
+      import swingerApp.urls
+      urlpatterns += [
+          url(r'^swinger/', include(swingerApp.urls))
+      ]
+      ```
 
 3. `python manage.py runserver`：即可進入頁面 `127.0.0.1:8000/swinger` 測試 swinger 是否安裝成功。
 
 ## API
 
-4. `/swinger/bulkswing`  
+1. `/swinger/bulkswing`  
  需要對此API做POST：下方有範例code。
     * [api](https://github.com/UDICatNCHU/swinger/#api)
 
@@ -70,8 +70,6 @@
 ## Deployment
 
 swingerApp is a django-app, so depends on django project.
-
-swingerApp 是一般的django插件，所以必須依存於django專案
 
 ## Built With
 
