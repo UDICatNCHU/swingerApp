@@ -24,7 +24,7 @@
 
   - add this:
 
-    ```
+    ```python
     INSTALLED_APPS=[
     ...
     ...
@@ -37,7 +37,7 @@
 
   - add this:
 
-    ```
+    ```python
     # swingerApp
     import swingerApp.urls
     urlpatterns += [
@@ -49,11 +49,11 @@
 
 ## API
 
-4. *`/swinger/bulkswing`*  
+4. `/swinger/bulkswing`  
  需要對此API做POST：下方有範例code。
-    * [api](https://github.com/UDICatNCHU/swinger/#api)
+    * [api](https://github.com/UDICatNCHU/swinger/#api)
 
-    ```
+    ```python
     >>> import json, requests
     >>> requests.post('http://udiclab.cs.nchu.edu.tw/swinger/bulkswing', data={'sentence':json.dumps(
       [
